@@ -1,0 +1,21 @@
+{
+  "name": "npm-pack-json",
+  "version": "1.0.0",
+  "description": "npm pack --dry-run --json",
+  "bin": "cli.js",
+  "main": "lib.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pdehaan/npm-pack-json.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pdehaan/npm-pack-json/issues"
+  },
+  "homepage": "https://github.com/pdehaan/npm-pack-json#readme"
+}

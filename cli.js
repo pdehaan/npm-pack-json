@@ -2,5 +2,10 @@
 
 const npmPack = require("./lib");
 
-const stats = npmPack();
-console.log(stats);
+try {
+  const stats = npmPack();
+  console.log(stats);
+} catch (err) {
+  console.error(err);
+  process.exitCode = 1;
+}

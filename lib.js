@@ -14,7 +14,7 @@ function npmPack() {
     .sort((a, b) => a.path.localeCompare(b.path))
     .map(info => {
       info.bytes = bytes(info.size);
-      info.mode = Number(info.mode).toString(8);
+      info.mode = parseInt(info.mode.toString(8), 10);
       return info;
     });
   json.bytes = bytes(json.size);

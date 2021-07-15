@@ -1,4 +1,5 @@
 const cp = require("child_process");
+const bytes = require("bytes");
 
 module.exports = npmPack;
 
@@ -9,6 +10,14 @@ function npmPack() {
   json = json.trim().slice(json.indexOf("[") - 1);
 
   json = JSON.parse(json).pop();
-  json.files = json.files.sort((a, b) => a.path.localeCompare(b.path));
+  json.files = json.files
+    .sort((a, b) => a.path.localeCompare(b.path))
+    .map(info => {
+      info.bytes = bytes(info.size);
+      info.mode = Number(info.mode).toString(8);
+      return info;
+    });
+  json.bytes = bytes(json.size);
+  json.unpackedBytes = bytes(json.unpackedSize);
   return json;
 }
